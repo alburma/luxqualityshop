@@ -90,8 +90,26 @@ export default function LinksPage() {
           ))}
         </div>
 
-        {/* Write to manager CTA */}
+        {/* Catalog CTA */}
         <div className="animate-fade-up delay-500 mt-3 w-full">
+          <a
+            href="https://a.abiz.cc/HNsbD3i"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-glow group flex w-full items-center justify-center gap-2.5 rounded-2xl bg-accent px-6 py-[14px] text-[15px] font-semibold tracking-wide text-white active:scale-[0.98]"
+          >
+            <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" x2="21" y1="6" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            Каталог
+            <ArrowRight />
+          </a>
+        </div>
+
+        {/* Write to manager CTA */}
+        <div className="animate-fade-up delay-600 mt-2.5 w-full">
           <a
             href="https://t.me/LQS_manage"
             target="_blank"
