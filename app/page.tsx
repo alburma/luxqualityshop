@@ -111,7 +111,7 @@ export default function LinksPage() {
         {/* Write to manager CTA */}
         <div className="animate-fade-up delay-600 mt-2.5 w-full">
           <a
-            href="https://t.me/LQS_manage"
+            href="https://t.me/LQS_manager"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-glow group flex w-full items-center justify-center gap-2.5 rounded-2xl bg-accent px-6 py-[14px] text-[15px] font-semibold tracking-wide text-white active:scale-[0.98]"
