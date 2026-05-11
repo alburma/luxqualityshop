@@ -8,12 +8,19 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://luxquality.website"),
   title: "LuxQualityShop — Premium Store",
   description: "LuxQualityShop — магазин премиальных товаров. Instagram, Telegram, WhatsApp, Facebook.",
   openGraph: {
     title: "LuxQualityShop — Premium Store",
     description: "Магазин премиальных товаров",
     type: "website",
+    siteName: "LuxQualityShop",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LuxQualityShop — Premium Store",
+    description: "Магазин премиальных товаров",
   },
   other: {
     "mobile-web-app-capable": "yes",
