@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "./icons";
 
 export type Dict = {
@@ -55,10 +56,35 @@ const socialLinks = [
 
 export function LinksContent({ dict, lang }: { dict: Dict; lang: "ru" | "en" }) {
   return (
-    <div lang={lang} className="relative flex min-h-dvh flex-col items-center justify-center px-4 py-10 safe-pb">
+    <div lang={lang} className="relative flex min-h-dvh flex-col items-center justify-center px-4 py-10 safe-pb safe-pt">
       {/* Subtle background accents */}
       <div className="animate-float pointer-events-none absolute -top-20 left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-accent/[0.05] blur-[120px]" />
       <div className="animate-glow pointer-events-none absolute bottom-0 left-1/2 h-[200px] w-[200px] -translate-x-1/2 rounded-full bg-accent-light/[0.04] blur-[100px]" />
+
+      {/* Language switcher — fixed top-right with safe-area for notch */}
+      <div
+        className="absolute right-4 z-20 flex items-center gap-0.5 rounded-full border border-white/40 bg-white/70 p-0.5 text-[12px] font-semibold tracking-[0.1em] shadow-sm backdrop-blur-md"
+        style={{ top: "max(1rem, env(safe-area-inset-top))" }}
+      >
+        <Link
+          href="/"
+          aria-label="Русский"
+          className={`rounded-full px-3 py-1.5 transition-colors ${
+            lang === "ru" ? "bg-accent text-white" : "text-accent-dark"
+          }`}
+        >
+          RU
+        </Link>
+        <Link
+          href="/en"
+          aria-label="English"
+          className={`rounded-full px-3 py-1.5 transition-colors ${
+            lang === "en" ? "bg-accent text-white" : "text-accent-dark"
+          }`}
+        >
+          EN
+        </Link>
+      </div>
 
       <div className="relative z-10 flex w-full max-w-[380px] flex-col items-center">
         {/* Logo */}
