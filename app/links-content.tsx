@@ -25,7 +25,7 @@ const socialLinks = [
   },
   {
     label: "Telegram",
-    href: "https://t.me/+yhh39f3qLkYyNjQy",
+    href: "https://t.me/+m17URU--fvxkODM6",
     icon: (
       <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="m22 2-7 20-4-9-9-4Z" />
@@ -149,7 +149,7 @@ export function LinksContent({ dict, lang }: { dict: Dict; lang: "ru" | "en" }) 
         </p>
         <div className="animate-fade-up delay-600 flex w-full flex-col gap-2.5">
           <a
-            href="https://t.me/+yhh39f3qLkYyNjQy"
+            href="https://t.me/+m17URU--fvxkODM6"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-glow group flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-[14px] text-[15px] font-semibold tracking-wide text-white active:scale-[0.98]"
