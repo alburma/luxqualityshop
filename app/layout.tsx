@@ -11,11 +11,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://luxquality.website"),
   title: "LuxQualityShop — Premium Store",
   description: "LuxQualityShop — магазин премиальных товаров. Instagram, Telegram, WhatsApp, Facebook.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      ru: "/",
+      en: "/en",
+    },
+  },
   openGraph: {
     title: "LuxQualityShop — Premium Store",
     description: "Магазин премиальных товаров",
     type: "website",
     siteName: "LuxQualityShop",
+    locale: "ru_RU",
   },
   twitter: {
     card: "summary_large_image",
