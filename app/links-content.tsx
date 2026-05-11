@@ -1,6 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "./icons";
+
+function trackClick(destination: string, locale: string) {
+  try {
+    fetch("/api/click", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ destination, locale }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    // ignore
+  }
+}
 
 export type Dict = {
   tagline: string;
@@ -14,6 +29,7 @@ export type Dict = {
 const socialLinks = [
   {
     label: "Instagram",
+    event: "social_instagram",
     href: "https://www.instagram.com/lux.quality.shop/",
     icon: (
       <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -25,6 +41,7 @@ const socialLinks = [
   },
   {
     label: "Telegram",
+    event: "social_telegram",
     href: "https://t.me/+m17URU--fvxkODM6",
     icon: (
       <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -35,6 +52,7 @@ const socialLinks = [
   },
   {
     label: "WhatsApp",
+    event: "social_whatsapp",
     href: "https://api.whatsapp.com/message/3OAO4FTEU6ELA1?autoload=1&app_absent=0",
     icon: (
       <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -45,6 +63,7 @@ const socialLinks = [
   },
   {
     label: "Facebook",
+    event: "social_facebook",
     href: "https://www.facebook.com/profile.php?id=61582381711912",
     icon: (
       <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -114,6 +133,7 @@ export function LinksContent({ dict, lang }: { dict: Dict; lang: "ru" | "en" }) 
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackClick(link.event, lang)}
               className="glass-card group flex items-center gap-4 rounded-2xl px-5 py-[14px] active:scale-[0.98]"
             >
               <span className="text-accent-light transition-colors duration-200 group-hover:text-accent-dark">
@@ -131,6 +151,7 @@ export function LinksContent({ dict, lang }: { dict: Dict; lang: "ru" | "en" }) 
             href="https://a.abiz.cc/HNsbD3i"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackClick("catalog", lang)}
             className="btn-glow group flex w-full items-center justify-center gap-2.5 rounded-2xl bg-accent px-6 py-[14px] text-[15px] font-semibold tracking-wide text-white active:scale-[0.98]"
           >
             <svg width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -152,6 +173,7 @@ export function LinksContent({ dict, lang }: { dict: Dict; lang: "ru" | "en" }) 
             href="https://t.me/+m17URU--fvxkODM6"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackClick("manager_telegram", lang)}
             className="btn-glow group flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-[14px] text-[15px] font-semibold tracking-wide text-white active:scale-[0.98]"
             style={{ backgroundColor: "#229ED9" }}
           >
@@ -166,6 +188,7 @@ export function LinksContent({ dict, lang }: { dict: Dict; lang: "ru" | "en" }) 
             href="https://api.whatsapp.com/message/3OAO4FTEU6ELA1?autoload=1&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackClick("manager_whatsapp", lang)}
             className="btn-glow group flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-[14px] text-[15px] font-semibold tracking-wide text-white active:scale-[0.98]"
             style={{ backgroundColor: "#25D366" }}
           >
