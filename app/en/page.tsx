@@ -6,7 +6,6 @@ const en: Dict = {
   catalog: "Catalog",
   managersTitle: "Contact a manager",
   managerTg: "Telegram manager",
-  managerWa: "WhatsApp manager",
   copyright: "© 2026 LUX QUALITY SHOP",
 };
 

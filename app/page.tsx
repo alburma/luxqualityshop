@@ -5,7 +5,6 @@ const ru: Dict = {
   catalog: "Каталог",
   managersTitle: "Написать менеджеру",
   managerTg: "Менеджер в Telegram",
-  managerWa: "Менеджер в WhatsApp",
   copyright: "© 2026 LUX QUALITY SHOP",
 };
 
